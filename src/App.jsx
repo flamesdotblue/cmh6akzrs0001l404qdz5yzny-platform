@@ -1,28 +1,30 @@
-import { useState } from 'react'
+import React from 'react'
+import Hero from './components/Hero'
+import About from './components/About'
+import Skills from './components/Skills'
+import JourneyBlogContact from './components/JourneyBlogContact'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-white text-slate-800">
+      <Hero />
+      <main className="relative">
+        <About />
+        <Skills />
+        <JourneyBlogContact />
+      </main>
+      <footer className="border-t border-emerald-100 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <div className="mx-auto max-w-6xl px-6 py-8 text-sm text-slate-500 flex items-center justify-between">
+          <p>© {new Date().getFullYear()} Pharmacy Portfolio</p>
+          <nav className="flex items-center gap-5">
+            <a href="#about" className="hover:text-emerald-700 transition-colors">About</a>
+            <a href="#skills" className="hover:text-emerald-700 transition-colors">Skills</a>
+            <a href="#journey" className="hover:text-emerald-700 transition-colors">Journey</a>
+            <a href="#blog" className="hover:text-emerald-700 transition-colors">Blog</a>
+            <a href="#contact" className="hover:text-emerald-700 transition-colors">Contact</a>
+          </nav>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
-
-export default App
